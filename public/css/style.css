@@ -1,0 +1,311 @@
+body {
+    line-height: 30px;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    background-color: rgb(240,236,232);
+    font-family: "NSSG Grotesk",YakuHanJPs,"游ゴシック","Yu Gothic",YuGothic,Hiragino Sans,"Meiryo",Hiragino Kaku Gothic ProN,sans-serif;
+    color: rgb(111, 097, 082);
+}
+  
+a {
+    text-decoration: none;
+}
+  
+img {
+    max-width: 100%;
+}
+  
+.logo {
+    width: 90px;
+    display: inline-block;
+}
+  
+.main-nav {
+    display: flex;
+    font-size: 1.25rem;
+    list-style: none;
+  
+}
+  
+.main-nav li {
+    margin-left: 50px;
+}
+  
+.main-nav a {
+    color: rgb(111, 097, 082);
+}
+  
+.main-nav a:hover {
+    color: #0F9966;
+}
+  
+.btn {
+    color: #fff;
+    background: rgb(111, 097, 082);
+    padding: 10px 40px;
+    display: inline-block;
+    border-radius: 20px;
+    margin-left: 180px;
+}
+  
+.btn:hover {
+    background-color: #0F9966;
+}
+  
+.page-header {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+  
+.wrapper {
+    margin: 0 auto;
+    padding: 0 7%;
+}
+  
+  
+.home-content {
+    margin-top: 10%;
+    writing-mode: vertical-rl;
+    font-family: serif;
+    letter-spacing: 0.2rem;
+}
+  
+.home-content p {
+    font-size: 1.15rem;
+    margin: 270px 10px 0px 960px;
+    color: #fff;
+}
+  
+.page-title {
+    font-size: 6rem;
+    font-weight: normal;
+    margin: 30px 100px 0px 100px;
+    color: #0F9966;
+  
+}
+  
+.big-bg {
+    background-size: 80% , 250px;
+    background-repeat: no-repeat;
+    margin-top: -50px;
+    height: 700px;
+    background-position: left, 97% 90%;
+}
+  
+#home {
+    background-image: url(../img/pagetop.jpg) , url(../img/book.png);
+}
+  
+  
+.contents {
+    color: #0F9966;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: -100px;
+    padding-top: 200px;
+    font-family: 'Crimson Text', serif;
+  
+}
+  
+.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 6%;
+    padding: 10px 250px;
+}
+  
+.item {
+    background-color: #fff;
+    padding: 30px 30px;
+    border-radius: 30px;
+}
+  
+.item img {
+    height: 180px;
+    width: 300px;
+    border-radius: 30px;
+}
+  
+.date {
+    font-size: 0.8rem;
+}
+  
+.item p {
+    padding: 0 10px;
+}
+  
+.news {
+    background-image: url(../img/leaves.png), url(../img/leaves.png);
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: 12% 45%, 90% 120%;
+}
+  
+.concept {
+    background-color: #fff;
+  
+}
+  
+.concept-item {
+    display: flex;
+    padding: 20px 80px;
+}
+  
+.concept-item img {
+    width: 700px;
+    padding: 50px 50px;
+}
+  
+.concept-item p {
+    margin-top: 50px;
+    padding: 20px 20px;
+}
+  
+  
+.concept-title {
+    margin-top: 100px;
+    text-align: right;
+    margin-right: 100px;
+}
+  
+.fellow-title {
+    text-align: left;
+}
+  
+  .fellow-item {
+    display: flex;
+  }
+  
+.fellow-item img {
+    padding: 30px 30px;
+    width: 700px;
+    margin-right: -50px;
+}
+  
+.fellow-item p {
+    padding: 30px 30px;
+}
+  
+.coffee {
+    background-color: #fff;
+}
+  
+.coffee-btn {
+    color: rgb(111, 097, 082);
+    padding: 10px 50px;
+    margin-top: 50px;
+    display: inline-block;
+    border-radius: 20px;
+    font-size: 20px;
+    border: solid 1px rgb(111, 097, 082);
+    margin-left: 540px;
+    margin-bottom: 150px;
+    background-color: #fff;
+}
+  
+.coffee-btn:hover {
+    color: #0F9966;
+}
+  
+.list {
+    display: flex;
+    margin-top: 6%;
+    padding: 20px 20px;
+    width: 350px;
+    height: 250px;
+}
+  
+.list img {
+    padding: 10px 30px;
+    border-radius: 150px;
+}
+  
+.coment {
+    text-align: center;
+}
+  
+.info {
+    background-color: #fff;
+}
+  
+.info-item {
+    display: flex;
+    margin-bottom: 100px;
+}
+  
+.info-item img {
+    width: 600px;
+    margin-left: 30px;
+    margin-top: -80px;
+}
+  
+.info-item li {
+    padding: 5px 50px;
+    list-style: none;
+}
+  
+.info-title {
+    margin-left: 400px;
+}
+  
+.map {
+    position: relative;
+    padding-bottom: 25%; 
+    height: 0;
+    overflow: hidden;
+}
+  
+.map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+  
+.footer {
+    background-color: #0F9966;
+    text-align: center;
+    position: relative;
+    padding: 30px 0 20px;
+    color: #fff;
+    font-size: 10px;
+    margin-top: 50px;
+}
+  
+.insta {
+    position: absolute;
+    right: 100px;
+    bottom: 20px;
+    width: 30px;
+}
+  
+.twitter {
+    position: absolute;
+    right: 150px;
+    bottom: 20px;
+    width: 30px;
+}
+  
+.sns {
+    width: 30px;
+}
+
+
+.signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mypage {
+    text-align: center;
+}

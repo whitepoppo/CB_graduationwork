@@ -1,0 +1,29 @@
+<div class="mypage">
+    <h1>こんにちは！<%= @name %>さん！</h1>
+    <p>予約はこちらから</p>
+</div>
+
+<div>
+    <form action="/mypage" method="post">
+        <div>
+            <label for="date">予約日: </label>
+            <input type="date" name="date">
+        </div>
+        <div>
+            <label for="time">予約時間: </label>
+            <input type="time" name="start_time">
+            <span>〜</span>
+            <input type="time" name="end_time">
+        </div>
+        <div>
+            <label for="guests">人数: </label>
+            <select name="guests">
+                <option value="1">1名様</option>
+                <option value="2">2名様</option>
+                <option value="3">3名様</option>
+                <option value="4">4名様</option>
+            </select>
+        </div>
+        <input type="submit" value="予約する">
+    </form>
+</div>
