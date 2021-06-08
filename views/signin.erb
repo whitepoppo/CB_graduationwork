@@ -1,13 +1,18 @@
 
-<form action="/signin" method="post">
-  <div>
-    <label for="email">メールアドレス: </label>
-    <input type="email" name="email">
+<div class="signin-wrapper">
+  <div class="signin-contents">
+    <form class="signin-form" action="/signin" method="post">
+      <img class="signin-img" src="../../img/logo2.svg" alt="">
+      <div>
+        <label for="email"></label>
+        <input class="signin-info" type="email" name="email" placeholder="email address">
+      </div>
+      <div>
+        <label for="password"></label>
+        <input class="signin-info" type="password" name="password" placeholder="password">
+      </div>
+      <input class="signin-btn" type="submit" value="LOGIN"></input>
+      <p class="message"><a href="http://localhost:4567/signup">新規登録はこちらから</a></p>
+    </form>
   </div>
-  <div>
-    <label for="password">パスワード: </label>
-    <input type="password" name="password">
-  </div>
-
-  <input type="submit" value="サインイン">
-</form>
+</div>

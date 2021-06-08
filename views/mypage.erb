@@ -1,29 +1,28 @@
-<div class="mypage">
-    <h1>こんにちは！<%= @name %>さん！</h1>
-    <p>予約はこちらから</p>
-</div>
-
-<div>
-    <form action="/mypage" method="post">
-        <div>
-            <label for="date">予約日: </label>
-            <input type="date" name="date">
+<div class="mypage-wrapper">
+    <header class="mypage-header">
+        <div class="mypage-greet">
+            <h1><%= @name %>さん！<br>ご利用ありがとうございます。</h1>
         </div>
-        <div>
-            <label for="time">予約時間: </label>
-            <input type="time" name="start_time">
-            <span>〜</span>
-            <input type="time" name="end_time">
+    </header>
+    <div class="myreservation">
+        <h2>次回のご予約</h2>
+        <p><%= @reservations.last['date'] %></ｐ>
+        <div class="reserve-date">
+            <span><%= @reservations.last['start_time'] %></span>〜
+            <span><%= @reservations.last['end_time'] %></span>
         </div>
-        <div>
-            <label for="guests">人数: </label>
-            <select name="guests">
-                <option value="1">1名様</option>
-                <option value="2">2名様</option>
-                <option value="3">3名様</option>
-                <option value="4">4名様</option>
-            </select>
-        </div>
-        <input type="submit" value="予約する">
-    </form>
+        <p><%= @reservations.last['guests'] %>名様</p>
+    </div>
+    <div class="mypage-btn">
+        <div class="mypage-btn-lists">
+            <div class="mypage-btn-list"><a href="http://localhost:4567/reserve"><img class="btn-img" src="../../img/coffee2.jpeg" alt="コーヒー"></a></div>
+            <div class="mypage-btn-list"><a href="#"><img class="btn-img" src="../../img/food1.jpeg" alt=""></a></div>
+            <div class="mypage-btn-list"><a href="#"><img class="btn-img" src="../../img/coffee.jpeg" alt=""></a></div>
+        </div>   
+    </div>
+    <footer class="mypage-footer">
+        <div class="insta"><a href="https://www.instagram.com/cafe_kitohon/?hl=ja" target="_blank"><img src="../../img/insta.png" alt="インスタ" ></a></div>
+        <div class="twitter"><a href="https://twitter.com/CAFE_KITOHON?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="../../img/twitter.png" alt="ツイッター" ></a></div>
+        <div class="copy">Copyright © 木と本 All Rights Reserved.</div>
+    </footer>
 </div>

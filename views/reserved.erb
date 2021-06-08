@@ -1,0 +1,9 @@
+<h1><%= @name %>さん、ご予約ありがとうございます！</h1>
+<p><%= @reservations.last['date'] %></ｐ>
+<span>
+    <p><%= @reservations.last['start_time'] %></p>〜
+    <p><%= @reservations.last['end_time'] %></p>
+</span>
+<p><%= @reservations.last['guests'] %>名様</p>
+<p>こちらで予約しました！</p>
+<p>ご来店お待ちしております。</p>

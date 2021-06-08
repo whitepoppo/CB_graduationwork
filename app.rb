@@ -7,9 +7,9 @@ enable :sessions
 
 
 client = PG::connect(
-  :host => "localhost",
-  :user => ENV.fetch("USER", "sagawakarin"), :password => '',
-  :dbname => "mysite")
+    :host => "localhost",
+    :user => ENV.fetch("USER", "sagawakarin"), :password => '',
+    :dbname => "mysite")
 
 
 get "/toppage" do
@@ -19,12 +19,12 @@ end
 # get "/signin" do
 #     return erb :signin
 # end
-  
+
 # post "/signin" do
 #     session[:user] = params[:name]
 #     redirect '/mypage'
 # end
-  
+
 # get "/mypage" do
 #     @name = session[:user]
 #     return erb :mypage
@@ -34,7 +34,7 @@ end
 get '/signup' do
     return erb :signup
 end
-  
+
 post '/signup' do
     name = params[:name]
     email = params[:email]
@@ -44,20 +44,20 @@ post '/signup' do
     session[:user] = user
     return redirect '/mypage'
 end
-  
+
 get '/signin' do
     return erb :signin
 end
-  
+
 post '/signin' do
     email = params[:email]
     password = params[:password]
     user = client.exec_params("SELECT * FROM users WHERE email = '#{email}' AND password = '#{password}'").to_a.first
     if user.nil?
-      return erb :signin
+        return erb :signin
     else
-      session[:user] = user
-      return redirect '/mypage'
+        session[:user] = user
+        return redirect '/mypage'
     end
 end
 
@@ -69,10 +69,16 @@ end
 
 get "/mypage" do
     @name = session[:user]['name'] # 書き換える
+    user_id = session[:user]['id']
+    @reservations = client.exec_params("SELECT * from reservations WHERE user_id = $1", [user_id]).to_a
     return erb :mypage
 end
 
-post "/mypage" do
+get "/reserve" do
+    return erb :reserve
+end
+
+post "/reserve" do
     date = params[:date]
     start_time = params[:start_time]
     end_time = params[:end_time]
@@ -80,14 +86,14 @@ post "/mypage" do
     user_id = session[:user]['id']
     #binding.pry
     client.exec_params("INSERT INTO reservations (user_id, date, start_time, end_time, guests) VALUES ($1, $2, $3, $4, $5)", [user_id, date, start_time, end_time, guests])
-    return redirect '/reserve'
+    return redirect '/reserved'
 end
 
-get "/reserve" do
+get "/reserved" do
     user_id = session[:user]['id']
     @reservations = client.exec_params("SELECT * from reservations WHERE user_id = $1", [user_id]).to_a
     #binding.pry
     @name = session[:user]['name']
-    return erb :reserve
+    return erb :reserved
 end
 
