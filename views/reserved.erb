@@ -1,9 +1,14 @@
-<h1><%= @name %>さん、ご予約ありがとうございます！</h1>
-<p><%= @reservations.last['date'] %></ｐ>
-<span>
-    <p><%= @reservations.last['start_time'] %></p>〜
-    <p><%= @reservations.last['end_time'] %></p>
-</span>
-<p><%= @reservations.last['guests'] %>名様</p>
-<p>こちらで予約しました！</p>
-<p>ご来店お待ちしております。</p>
+<div class="rd-wrapper">
+    <h1><%= @name %>さん<br>ご予約ありがとうございます！</h1>
+    <div class="rd-contents">
+        <p><%= @reservations.last['date'] %></ｐ>
+        <div class="reserve-date">
+                <span><%= @reservations.last['start_time'] %></span>〜
+                <span><%= @reservations.last['end_time'] %></span>
+        </div>
+        <p><%= @reservations.last['guests'] %>名様</p>
+    </div>
+    <p>こちらで予約しました！</p>
+    <p>ご来店お待ちしております。</p>
+    <div class="rd-btn"><a href="http://localhost:4567/mypage">マイページ</a></div>
+</div>

@@ -1,0 +1,49 @@
+<header class="menu-header">
+        <div class="menu-title">
+            <h1>CAFE LOG</h1>
+        </div>
+</header>
+<div class="log-wrapper">
+    <div class="log-contents">
+        
+        <form action="/cafelog" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="title">タイトル: </label>
+                <input type="text" name="title">
+            </div>
+            <div>
+                <label for="content">投稿内容：</label>
+                <textarea name="content" cols="50" rows="8"></textarea>
+            </div>
+    
+            <div>
+                <label for="image">画像: </label>
+                <input type="file" name="image">
+            </div>
+            <input type="submit" value="投稿">
+        </form>
+    </div>
+    
+    <div class="post-wrappers">
+        <h2>MY POST</h2>
+        <div class="post-wrapper">
+            <% @posts.each do |post| %>
+                <div class="post-contents">
+                    <img src="/images/<%= post['image_path']%>">
+                    <div class="post-text">
+                        <h1><%= post['title'] %></h1>
+                        <p><%= post['content'] %></p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <div class="rd-btn log-btn"><a href="http://localhost:4567/mypage">マイページ</a></div>
+
+    </div>
+
+</div>
+<footer class="mypage-footer">
+        <div class="insta"><a href="https://www.instagram.com/cafe_kitohon/?hl=ja" target="_blank"><img src="../../img/insta.png" alt="インスタ" ></a></div>
+        <div class="twitter"><a href="https://twitter.com/CAFE_KITOHON?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="../../img/twitter.png" alt="ツイッター" ></a></div>
+        <div class="copy">Copyright © 木と本 All Rights Reserved.</div>
+</footer>

@@ -1,24 +1,31 @@
-<div>
-    <form action="/reserve" method="post">
-        <div>
-            <label for="date">予約日: </label>
-            <input type="date" name="date">
+<div class="reserve-wrapper">
+    <header class="reserve-header">
+        <div class="reserve-title">
+            <h1>RESERVE</h1>
         </div>
-        <div>
-            <label for="time">予約時間: </label>
-            <input type="time" name="start_time">
-            <span>〜</span>
-            <input type="time" name="end_time">
-        </div>
-        <div>
-            <label for="guests">人数: </label>
-            <select name="guests">
-                <option value="1">1名様</option>
-                <option value="2">2名様</option>
-                <option value="3">3名様</option>
-                <option value="4">4名様</option>
-            </select>
-        </div>
-        <input type="submit" value="予約する">
-    </form>
+    </header>
+    <div class="reserve-box">
+        <form action="/reserve" method="post">
+            <div class="r-time">
+                <label for="date">予約日: </label>
+                <input type="date" name="date">
+            </div>
+            <div class="r-time">
+                <label for="time">予約時間: </label>
+                <input type="time" name="start_time">
+                <span>〜</span>
+                <input type="time" name="end_time">
+            </div>
+            <div class="r-time">
+                <label for="guests">人数: </label>
+                <select name="guests">
+                    <option value="1">1名様</option>
+                    <option value="2">2名様</option>
+                    <option value="3">3名様</option>
+                    <option value="4">4名様</option>
+                </select>
+            </div>
+            <input class="r-btn" type="submit" value="予約する">
+        </form>
+    </div>
 </div>

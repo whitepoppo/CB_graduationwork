@@ -1,4 +1,6 @@
+
 body {
+    /* display: flex; GSAP入れると画面表示がおかしくなったため */
     line-height: 30px;
     font-size: 15px;
     letter-spacing: 0.05em;
@@ -109,6 +111,7 @@ img {
     padding-top: 200px;
     font-family: 'Crimson Text', serif;
 }
+
 
 .grid {
     display: grid;
@@ -386,8 +389,9 @@ img {
 
 .mypage-greet h1 {
     background-color: rgba(82, 130, 90, 0.4);
-    padding: 20px 0;
+    padding: 30px 0;
     width: auto;
+    height: 70px;
 }
 
 .myreservation {
@@ -407,11 +411,12 @@ img {
     padding: 30px 0 20px;
     color: #fff;
     font-size: 10px;
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 .mypage-btn-lists {
     display: flex;
+    justify-content: center;
 }
 
 .mypage-btn-list {
@@ -419,7 +424,15 @@ img {
     padding: 20px 50px;
     width: 280px;
     height: 180px;
+    z-index: 1;
 }
+
+.mypage-btn-list h3 {
+    font-size: 25px;
+    font-family: 'Vollkorn', serif;
+    margin-left: 50px;
+}
+
 
 .btn-img {
     padding: 10px 30px;
@@ -428,4 +441,300 @@ img {
 
 .btn-img:hover {
     opacity: 0.5;
+}
+
+
+.reserve-box {
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.reserve-header {
+    background-size: cover;
+    background-image: url(../img/reserve_title.jpeg);
+}
+
+.reserve-title {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.reserve-title h1 {
+    width: auto;
+    text-align: center;
+    font-size: 30px;
+    background-color: rgba(82, 130, 90, 0.5);
+    padding: 20px 20px;
+    font-family: 'Vollkorn', serif;
+}
+
+.r-time {
+    margin-top: 20px;
+}
+
+.r-btn {
+    outline: 0;
+    background-color: #0F9966;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    max-width: 280px;
+    margin-top: 30px;
+    box-shadow: 0px 5px 12px #CAD4E2, -6px -6px 12px #FFF;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+}
+
+.r-btn:hover {
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #FFF;
+    background-color: #FFF;
+    color: #0F9966;
+}
+
+.rd-wrapper {
+    background-color: white;
+    display: grid;
+    place-items: center;
+    height: 90vh;
+    text-align: center;
+}
+
+.rd-contents {
+    padding: 1em 1em;
+    margin: 2em 0;
+    background: #d0e2be;
+    box-shadow: 0px 0px 0px 10px #d0e2be;
+    border: dashed 2px white;
+    width: 250px;
+}
+
+.rd-btn a {
+    color: white;
+
+}
+
+.rd-btn {
+    outline: 0;
+    background-color: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    max-width: 250px;
+    margin-top: 30px;
+    box-shadow: 0px 5px 12px #CAD4E2, -6px -6px 12px #FFF;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+}
+
+.rd-btn:hover {
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #FFF;
+    background-color: #0F9966;
+}
+
+.menu-header {
+    background-size: cover;
+    background-image: url(../img/reserve_title.jpeg);
+}
+
+.menu-title {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.menu-title h1 {
+    width: auto;
+    text-align: center;
+    font-size: 30px;
+    background-color: rgba(82, 130, 90, 0.5);
+    padding: 20px 20px;
+    font-family: 'Vollkorn', serif;
+}
+
+/* .menu-grid {
+    display: grid;
+    width: 94vw;
+    margin: 0 auto 3vw;
+    gap: 2vw;
+    grid-template-columns: repeat(3, 30vw);
+    grid-template-rows: repeat(8, 26vw); 
+} */
+
+.lunch img{
+    width: 500px;
+}
+
+.menu-wrapper h2{
+    text-align: center;
+    font-family: 'Vollkorn', serif;
+
+}
+
+.lunch-contents {
+    display: flex;
+    width: auto;
+    padding: 50px 200px;
+    background-color: #fff;
+}
+
+.lunch-text {
+    padding-left: 50px;
+}
+
+.lunch-t span{
+    background: linear-gradient(transparent 50%, yellow 50%);
+}
+
+.l-t {
+    border-bottom: dashed 2px #0F9966;
+    margin-top: 50px;
+}
+
+
+.hover_image_wrap {
+	display: flex;
+	justify-content: space-between;
+}
+.hover_image {
+	width: 48%;
+}
+.hover_image a {
+	display: block;
+	position: relative;
+}
+.hover_image a .rotate_image {
+	position: relative;
+	transition: transform .5s;
+	z-index: 2;
+	backface-visibility: hidden;
+}
+.hover_image a:hover .rotate_image {
+	transform: rotateY(180deg);
+}
+.hover_image a .rotate_txt {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #eee;
+	transform: rotateY(180deg);
+	transition: transform .5s;
+	z-index: 1;
+}
+.hover_image a:hover .rotate_txt {
+	transform: rotateY(0);
+}
+.caption_txt {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	text-align: center;
+	color: #000;
+}
+@media screen and (max-width: 480px) {
+	.hover_image_wrap {
+		flex-direction: column;
+	}
+	.hover_image {
+		width: 100%;
+		margin: 0 0 1em;
+	}
+	.hover_image:last-child {
+		margin: 0;
+	}
+	.hover_image a:hover .rotate_image {
+		transform: rotateY(0);
+	}
+}
+.rotate_image img {
+    width: 500px;
+}
+
+.menu-wrapper {
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.menu-btn {
+    margin-top: 100px;
+}
+
+.log-contents form{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.post-wrapper {
+    text-align: center;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 70px;
+    margin-right: 70px;
+    place-items: center;
+}
+
+.post-contents img {
+    width: 300px;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+.post-contents {
+    place-items: center;
+    width: 300px;
+}
+
+.post-text h1 {
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.post-text {
+    background-color: #d0e2be;
+    border-radius: 15px;
+}
+
+.post-text p {
+    padding-bottom: 20px;
+}
+
+.log-btn {
+    place-items: center;
+}
+
+.post-wrappers h2 {
+    border-bottom: dashed 2px #0F9966;
+    text-align: center;
+    font-family: 'Vollkorn', serif;
+}
+
+.logout-btn {
+    width: 200px;
+    text-align: center;
 }

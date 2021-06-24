@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
 require 'pry'
+require 'date'
 
 enable :sessions
 
@@ -64,13 +65,16 @@ end
 
 delete '/signout' do
     session[:user] = nil
-    redirect '/signin'
+    redirect '/toppage'
 end
 
 get "/mypage" do
     @name = session[:user]['name'] # 書き換える
     user_id = session[:user]['id']
+    # if !params[:reservation].nil?
     @reservations = client.exec_params("SELECT * from reservations WHERE user_id = $1", [user_id]).to_a
+    #binding.pry
+    # end
     return erb :mypage
 end
 
@@ -86,7 +90,15 @@ post "/reserve" do
     user_id = session[:user]['id']
     #binding.pry
     client.exec_params("INSERT INTO reservations (user_id, date, start_time, end_time, guests) VALUES ($1, $2, $3, $4, $5)", [user_id, date, start_time, end_time, guests])
-    return redirect '/reserved'
+    reservation = client.exec_params("SELECT * from reservations WHERE date = $1 AND start_time = $2", [date, start_time]).to_a
+    #binding.pry
+    t = date
+    if Date.parse(t) < Date.today
+        return erb :reserve
+    else
+        session[:reservation] = reservation
+        return redirect '/reserved'
+    end
 end
 
 get "/reserved" do
@@ -97,3 +109,37 @@ get "/reserved" do
     return erb :reserved
 end
 
+get "/menu" do
+    return erb :menu
+end
+
+get "/cafelog" do
+    @posts = client.exec_params("SELECT * from posts").to_a
+    return erb :cafelog
+end
+
+post "/cafelog" do
+    title = params[:title]
+    content = params[:content]
+    
+    if !params[:image].nil? # データがあれば処理を続行する
+        tempfile = params[:image][:tempfile] # ファイルがアップロードされた場所
+        save_to = "./public/images/#{params[:image][:filename]}" # ファイルを保存したい場所
+        FileUtils.mv(tempfile, save_to)
+        image_path = params[:image][:filename]
+    end
+    client.exec_params(
+    "INSERT INTO posts (title, content, image_path) VALUES ($1, $2, $3)",
+    [title, content, image_path]
+    )
+    redirect '/cafelog'
+end
+
+post "/delete" do
+    Comment.find(@posts).destroy
+end
+
+
+get '/posts/new' do
+    return erb :new_board
+end
